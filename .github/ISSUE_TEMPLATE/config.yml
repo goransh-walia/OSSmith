@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 Ask a Question
+    url: https://github.com/<org>/OSSmith/discussions
+    about: For open-ended questions, use GitHub Discussions or the Question template below.
+  - name: 📖 Read the Contributing Guide
+    url: https://github.com/<org>/OSSmith/blob/main/CONTRIBUTING.md
+    about: Please read this before opening an issue or pull request.

@@ -1,0 +1,86 @@
+# =========================
+# OSSmith — Root .gitignore
+# =========================
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor / IDE
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+*~
+
+# =========================
+# Node / Frontend
+# =========================
+node_modules/
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/build/
+frontend/dist/
+frontend/.turbo/
+frontend/coverage/
+frontend/playwright-report/
+frontend/test-results/
+frontend/*.tsbuildinfo
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnpm-store/
+
+# =========================
+# Python / Backend
+# =========================
+backend/__pycache__/
+backend/**/__pycache__/
+*.py[cod]
+*$py.class
+backend/.venv/
+backend/venv/
+backend/.mypy_cache/
+backend/.ruff_cache/
+backend/.pytest_cache/
+backend/htmlcov/
+backend/.coverage
+backend/.coverage.*
+backend/coverage.xml
+backend/*.egg-info/
+backend/dist/
+backend/build/
+.uv/
+
+# =========================
+# Docker
+# =========================
+docker/*.log
+
+# =========================
+# Logs
+# =========================
+logs/
+*.log
+
+# =========================
+# Misc
+# =========================
+*.pid
+*.seed
+*.pid.lock
+.cache/
