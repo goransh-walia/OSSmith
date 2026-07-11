@@ -1,0 +1,32 @@
+name: ossmith-backend
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ossmith-backend:local
+    container_name: ossmith-backend
+    ports:
+      - "${PORT:-8000}:8000"
+    environment:
+      PROJECT_NAME: ${PROJECT_NAME:-OSSmith}
+      VERSION: ${VERSION:-0.2.0-alpha}
+      ENVIRONMENT: ${ENVIRONMENT:-development}
+      DEBUG: ${DEBUG:-true}
+      HOST: 0.0.0.0
+      PORT: 8000
+      LOG_LEVEL: ${LOG_LEVEL:-info}
+      DATABASE_URL: ${DATABASE_URL:-sqlite:////app/data/ossmith.db}
+    volumes:
+      - ossmith-data:/app/data
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 5s
+    restart: unless-stopped
+
+volumes:
+  ossmith-data:
